@@ -5,7 +5,7 @@ import React, {FC} from "react";
  * 
  * Deberás tipar las propiedades si usas este componente
  * 
- * 
+ * @author Francisco Gerardi
  * @returns un JSX element 
  */
 

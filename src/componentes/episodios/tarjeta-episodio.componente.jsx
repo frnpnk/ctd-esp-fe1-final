@@ -7,6 +7,7 @@ import './tarjeta-episodio.css';
  * 
  * 
  * @returns un JSX element 
+ * TODO ALL
  */
 const TarjetaEpisodio = () => {
 

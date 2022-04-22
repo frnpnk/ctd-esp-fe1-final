@@ -1,3 +1,8 @@
+/**
+* @author Francisco Gerardi
+**/
+
+
 interface CharacterType {
     id: number;
     name: string;

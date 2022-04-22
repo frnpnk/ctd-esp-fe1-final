@@ -1,3 +1,4 @@
+import { FC } from "react";
 import {Link} from "react-router-dom";
 import './encabezado.css';
 
@@ -5,10 +6,12 @@ import './encabezado.css';
  * Encabezado que contiene los links para navegar entre las páginas
  *
  * Uso: `<Encabezado />`
- *
+ * /**
+ * @author Francisco Gerardi
+
  * @returns {JSX.Element}
  */
-const Encabezado = () => {
+const Encabezado:FC = () => {
 
     return <header>
             <div>

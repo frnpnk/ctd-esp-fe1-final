@@ -1,5 +1,8 @@
 import Character from "../types/character.types";
 
+/**
+* @author Francisco Gerardi
+*/
 
 export const characterFilterAPI = async (
   name?: string

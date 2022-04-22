@@ -3,7 +3,11 @@ import { characterFilterAPI } from "../service/apiConnect";
 import { IRootState } from "../store/store";
 import CharacterType from "../types/character.types";
 
-
+/**
+* @author Francisco Gerardi
+* @param {String} input query
+* @returns actions
+*/
 
 
 interface fetchCharacterPendingAction extends Action{

@@ -12,10 +12,12 @@ import {addToFav, remToFav} from '../../actions/character.action'
  * Tarjeta para cada personaje dentro de la grilla de personajes. 
  * 
  * Deberás agregar las propiedades necesarias para mostrar los datos de los personajes
- * 
- * 
- 
- */
+ * /**
+* @author Francisco Gerardi
+* @param {CharacterType} input character
+* @returns JSX element
+*/
+
  interface charProps{ CharacterInfo: CharacterType}
  
 

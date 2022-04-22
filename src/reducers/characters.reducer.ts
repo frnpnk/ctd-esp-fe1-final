@@ -2,6 +2,13 @@ import { Reducer } from "@reduxjs/toolkit";
 import { characterActions } from "../actions/character.action";
 import Character from "../types/character.types";
 
+
+/**
+* @author Francisco Gerardi
+* 
+* 
+*/
+
 interface StateOfCharacter {
     status: "IDLE"|"LOADING"|"COMPLETED"|"FAILED"
     characters: Character[];

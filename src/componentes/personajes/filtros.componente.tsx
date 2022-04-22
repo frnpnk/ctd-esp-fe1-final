@@ -2,10 +2,11 @@ import './filtros.css';
 import { ChangeEvent, FC } from 'react';
 import { useDispatch} from 'react-redux';
 import { fetchCharactersThunk } from '../../actions/character.action';
+import CharacterType from '../../types/character.types';
 /**
 * @author Francisco Gerardi
 * @param {String} input query
-* @returns {any[]} Array de personaje
+* @returns {CharacterType[]} Array de personaje
 */
 
 

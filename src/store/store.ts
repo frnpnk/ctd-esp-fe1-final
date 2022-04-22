@@ -6,6 +6,10 @@ import {TypedUseSelectorHook, useSelector as useReduxSelector} from "react-redux
 import thunk from 'redux-thunk'
 import charactersReducer  from "../reducers/characters.reducer";
 
+/**
+* @author Francisco Gerardi
+*/
+
 
 const rootReducer = combineReducers({
       characters : charactersReducer,})

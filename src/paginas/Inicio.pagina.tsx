@@ -9,12 +9,14 @@ import { FC } from "react";
  * 
  * Uso: 
  * ``` <PaginaInicio /> ```
- * 
+ *  
+ * @author Francisco Gerardi
+
  * @returns la pagina de inicio
  */
 
 
- const PaginaInicio = () => {
+ const PaginaInicio: FC = () => {
 
 
     return <div className="container">

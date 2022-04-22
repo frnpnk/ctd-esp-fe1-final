@@ -2,6 +2,7 @@ import { FC, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { fetchCharactersThunk } from '../../actions/character.action';
 import { useSelector } from '../../store/store';
+import CharacterType from '../../types/character.types';
 import './grilla-personajes.css';
 import TarjetaPersonaje from './tarjeta-personaje.componente';
 
@@ -10,20 +11,10 @@ import TarjetaPersonaje from './tarjeta-personaje.componente';
  * 
  * Deberás agregar las funciones necesarias para mostrar y paginar los personajes
  * 
- * 
+ * @author Francisco Gerardi
+ * @param {CharacterType[]} input []
  * @returns un JSX element 
  */
-
-/*
-const GrillaPersonajes: FC = () => {
-
-    return <div className="grilla-personajes">
-       <TarjetaPersonaje />
-    </div>
-}
- 
-export default GrillaPersonajes;
-*/
 
 
 const GrillaPersonajes: FC = () => {
