@@ -5,6 +5,7 @@ interface CharacterType {
     image: string;
     species: string;
     episode: string[];
+    favorite: boolean;
 }
 
 export default CharacterType;

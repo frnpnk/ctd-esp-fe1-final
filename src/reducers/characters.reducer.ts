@@ -39,9 +39,23 @@ const charactersReducer: Reducer<StateOfCharacter, characterActions> = (
                      status: "FAILED",
                     errorMsj:action.error
                 }
-            /*case "ADD_TO_FAV":
-                return {...state, favs: [action.payload.character,
-                     ...state.favs.filter(character => character.id !== action.payload.character.id)] }*/
+            case "ADD_TO_FAV":
+                return{
+                    ...state,
+                    favs: [...state.favs, action.character]
+                }
+         
+            case "REM_TO_FAV":
+                return{
+                    ...state,
+                    favs: state.favs.filter(favs => favs.id !== action.character.id)
+                }
+
+             case "CLEAN_FAV":
+                 return {
+                    ...state,
+                    favs: []
+                    }
             default:
                 return {...state}
         }

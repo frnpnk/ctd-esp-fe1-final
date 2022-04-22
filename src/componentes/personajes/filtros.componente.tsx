@@ -1,12 +1,11 @@
 import './filtros.css';
-import { ChangeEvent, FC, useEffect } from 'react';
+import { ChangeEvent, FC } from 'react';
 import { useDispatch} from 'react-redux';
 import { fetchCharactersThunk } from '../../actions/character.action';
 /**
 * @author Francisco Gerardi
-* @param {String} input personaje
-* @returns {any[]} Array de tarjetas
-* TODO: crear array de personajes
+* @param {String} input query
+* @returns {any[]} Array de personaje
 */
 
 
@@ -26,6 +25,7 @@ const Filtros: FC  = () => {
             placeholder="Rick, Morty, Beth, Alien, ...etc"
             name="nombre" 
             onChange={onChange}
+            
         />
     </div>
 }

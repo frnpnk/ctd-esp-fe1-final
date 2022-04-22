@@ -1,9 +1,13 @@
 import { FC} from 'react';
-import Character from '../../types/character.types';
 import BotonFavorito from '../botones/boton-favorito.componente';
 import './tarjeta-personaje.css';
 import './grilla-personajes.componente';
 import CharacterType from '../../types/character.types';
+import { useDispatch } from 'react-redux';
+import { useSelector } from '../../store/store';
+import {addToFav, remToFav} from '../../actions/character.action'
+
+
 /**
  * Tarjeta para cada personaje dentro de la grilla de personajes. 
  * 
@@ -12,11 +16,24 @@ import CharacterType from '../../types/character.types';
  * 
  
  */
- interface charProps{
-    CharacterInfo: CharacterType
- }
+ interface charProps{ CharacterInfo: CharacterType}
  
+
+
 const TarjetaPersonaje: FC<charProps> = ({CharacterInfo}) => {
+
+    const dispatch = useDispatch()
+    const favorites = useSelector((state) => state.characters.favs);
+
+    let favorite = favorites.some((favorite)=>favorite.id === CharacterInfo.id)
+     
+    const toggleFav=()=>{
+        if(!favorite){
+        dispatch(addToFav(CharacterInfo))
+        }else{
+        dispatch(remToFav(CharacterInfo));
+        }
+    }
 
     return(
     <>
@@ -24,7 +41,7 @@ const TarjetaPersonaje: FC<charProps> = ({CharacterInfo}) => {
             <img src={CharacterInfo.image} alt="Rick Sanchez"/>
             <div className="tarjeta-personaje-body">
                 <span>{CharacterInfo.name}</span>
-                <BotonFavorito esFavorito={false} onClick={undefined} />
+                <BotonFavorito esFavorito={favorite} onClick={toggleFav} />
             </div>
       </div>
     </>
@@ -32,3 +49,4 @@ const TarjetaPersonaje: FC<charProps> = ({CharacterInfo}) => {
 }
 
 export default TarjetaPersonaje;
+

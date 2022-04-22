@@ -18,6 +18,18 @@ interface fetchCharacterFailedAction extends Action{
     type: "FETCH_CHARACTER_FAILED",
     error: string,
 }
+interface addToFavAction extends Action{
+    type: "ADD_TO_FAV",
+    character: CharacterType
+}
+interface remToFavAction extends Action{
+    type: "REM_TO_FAV",
+    character: CharacterType
+}
+interface cleanFavAction extends Action{
+    type: "CLEAN_FAV",
+    
+}
 interface fetchCharacterthunkAction extends ThunkAction<void, IRootState, unknown, characterActions>{};
 
 
@@ -44,6 +56,28 @@ const fetchCharacterFailed: ActionCreator<fetchCharacterFailedAction> = (error: 
 
 
 
+export const addToFav: ActionCreator<addToFavAction> = (character: CharacterType ) =>{
+    return{
+        type: "ADD_TO_FAV",
+        character
+    }
+}
+
+export const remToFav: ActionCreator<remToFavAction> = (character: CharacterType ) =>{
+    return{
+        type: "REM_TO_FAV",
+        character
+    }
+}
+export const cleanFav: ActionCreator<cleanFavAction> = ( ) =>{
+    return{
+        type: "CLEAN_FAV",
+        
+    }
+}
+
+
+
 export const fetchCharactersThunk = (query : string) : fetchCharacterthunkAction =>{
     return async(dispatch, getState) =>{
         dispatch(fetchCharacterPending(query));
@@ -61,7 +95,10 @@ export const fetchCharactersThunk = (query : string) : fetchCharacterthunkAction
 export type characterActions = 
 ReturnType<typeof fetchCharacterSucces>
 |ReturnType<typeof fetchCharacterPending>
-|ReturnType<typeof fetchCharacterFailed>;
+|ReturnType<typeof fetchCharacterFailed>
+|ReturnType<typeof addToFav>
+|ReturnType<typeof remToFav>
+|ReturnType<typeof cleanFav>;
 
 
 
